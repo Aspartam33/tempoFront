@@ -1,0 +1,48 @@
+<div class="contenedor">
+  <h2 class="titulo">
+    Validar pago Zelle
+  </h2>
+  <form action="" class="myForm">
+    <div class="row">
+      <div class="column">
+        <div class="input-group1">
+          <label for="name_sender">
+            Nombre del Emisor
+          </label>
+          <input type="text" id="name_receptor" placeholder="Persona que realizo el Zelle">
+        </div>
+        <div class="select-group">
+          <label for="id-receptor">Fecha de transferencia</label>
+          <div class="seleccion">
+            <input disabled placeholder="Ingrese fecha"  [matDatepicker]="picker" class="token-input">
+            <button (click)="picker.open()" class="date-pick">
+              <mat-icon [ngStyle]="{'color':'#ffffff'}">date_range</mat-icon>
+            </button>
+            <mat-datepicker #picker [disabled]="false"></mat-datepicker>
+        </div>
+        </div>
+        <div class="input-group1">
+          <label for="reference:_zelle">
+              Correo electronico
+          </label>
+          <input type="mail" id="name_receptor" placeholder="Correo">
+        </div>
+        <div class="input-group1">
+            <label for="reference:_zelle">
+              Numero de confirmación
+            </label>
+            <input type="text" id="name_receptor" placeholder="Numero de confirmación">
+          </div>
+          <div class="input-group1">
+            <label for="reference:_zelle">
+                Monto de la transferencia
+            </label>
+            <input type="text" id="name_receptor" placeholder="Monto de la transferencia">
+          </div>
+          <div class="input-group">
+            <button id="continuar" routerLink="/recipt-zelle" >VALIDAR PAGO</button>
+          </div>
+      </div>
+    </div>
+  </form>
+</div>

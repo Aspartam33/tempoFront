@@ -1,0 +1,193 @@
+/*estructura  menu footer*/
+.toolBarNav {
+  position: fixed;
+  bottom: 0px;
+  z-index: 1000;
+  display: flex;
+  padding: 0.5px;
+  box-shadow: 2px 2px 4px 5px #bdbdbf;
+  background-color: #ffffff;
+  height: 6em;
+  will-change: transform;
+  transform: translateZ(0);
+  min-height: 10%;
+}
+
+/*botones menu footer*/
+.toolBarNav button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: #ffffff;
+  border: none;
+  outline: none;
+  margin-top: 2px;
+  flex-grow: 1;
+
+
+}
+
+/*menu footer texto*/
+.toolBarNav span {
+  font-family: Helvetica, sans-serif;
+  display: block;
+  text-align: center;
+  font-size: 13px;
+  color: #111111;
+  white-space: pre-line;
+  line-height: 15px;
+
+}
+
+/*estructura submenu cobro y pago*/
+::ng-deep .cdk-overlay-container .subMenu {
+  margin-bottom: 35px;
+  border-radius: 15px;
+  box-shadow: #00000029;
+  margin-left: 50px;
+  width: 180px;
+  height: auto;
+
+
+}
+
+/*botones sub menu*/
+.mat-menu-item {
+  font-family: Helvetica, sans-serif;
+  color: #1A6940;
+  font-size: 15px;
+  height: 30px;
+  width: 300px;
+  text-align: left;
+  line-height: 10px;
+
+
+}
+
+/*Diseño teléfono */
+@media screen and (min-width: 360px) and (max-width: 1024px) {
+
+  /*estructura  menu footer*/
+  .toolBarNav {
+    position: fixed;
+    bottom: 0px;
+    z-index: 1000;
+    display: flex;
+    padding: 0.5px;
+    box-shadow: 2px 2px 4px 5px #bdbdbf;
+    background-color: #ffffff;
+    height: 4em;
+    will-change: transform;
+    transform: translateZ(0);
+
+
+  }
+
+  /*botones menu footer*/
+  .toolBarNav button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    height: 60px;
+    background-color: #ffffff;
+    border: none;
+    outline: none;
+    margin-top: 2px;
+    flex-grow: 2;
+
+
+  }
+
+  /*menu footer texto*/
+  .toolBarNav span {
+    font-family: Helvetica, sans-serif;
+    display: block;
+    text-align: center;
+    font-size: 10px;
+    color: #111111;
+    white-space: pre-line;
+
+
+    font-weight: 400;
+    line-height: 12px;
+
+  }
+
+  /*estructura submenu cobro y pago*/
+  ::ng-deep .cdk-overlay-container .subMenu {
+    margin-bottom: 20px;
+
+    border-radius: 15px;
+    box-shadow: #00000029;
+    width: 160px;
+    height: auto;
+
+
+  }
+
+  /*botones sub menu*/
+  .mat-menu-item {
+    font-family: Helvetica, sans-serif;
+    color: #1A6940;
+    font-size: 15;
+    height: 40px;
+    width: 220px;
+    text-align: left;
+    line-height: 10px;
+
+  }
+
+  ::ng-deep .cdk-overlay-container .subMenu1 {
+    margin-bottom: 15px;
+
+    border-radius: 15px;
+    box-shadow: #00000029;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 200px;
+    height: auto;
+
+
+  }
+
+  /*estructura submenu mesa de cambio*/
+  ::ng-deep .cdk-overlay-container .subMenuExchange {
+    margin-bottom: 20px;
+
+    border-radius: 15px;
+    box-shadow: #00000029;
+    /*margin-left: 150px;*/
+    width: 165px;
+    height: 100px;
+
+
+  }
+
+  /*botones sub menu*/
+  .mat-menu-item {
+    font-family: Helvetica, sans-serif;
+    color: #1A6940;
+    font-size: 15;
+    height: 40px;
+    width: 220px;
+    text-align: left;
+    line-height: 10px;
+
+  }
+
+  ::ng-deep .cdk-overlay-container .subMenu1 {
+    margin-bottom: 15px;
+
+    border-radius: 15px;
+    box-shadow: #00000029;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 200px;
+    height: 220px;
+
+
+  }
+}

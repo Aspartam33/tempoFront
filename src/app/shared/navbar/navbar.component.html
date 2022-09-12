@@ -1,0 +1,81 @@
+<mat-sidenav-container fullscreen style="background-color: #E6EAF1;">
+
+    <mat-sidenav #sidenav position="end">
+
+        <mat-toolbar>
+
+            <span class="spacer"></span>
+            <span style="color:#007953;">Ayuda</span>
+            <button mat-button (click)="sidenav.toggle()">
+                <mat-icon style="color:#007953;">close</mat-icon>
+            </button>
+        </mat-toolbar>
+        <mat-toolbar
+            style="background-color: white !important; font-family: Helvetica, Sans-Serif !important; font-size: 18px;">
+            <mat-icon style="margin: 5px;"> account_circle</mat-icon>
+            <div style="display:flex; flex-direction:column; line-height: 21.28px; font-size: 16px; font-weight: 400; color:  #111211;
+        ;">
+                <span>Yolanda Gigante</span>
+                <span>Última sesión 09:55 17/02/2022</span>
+            </div>
+
+        </mat-toolbar>
+
+        <mat-nav-list>
+            <a routerLink="preguntas-frecuentes" mat-list-item (click)="sidenav.toggle()">
+                <span class="spacer"></span>
+                <mat-icon mat-list-icon>chevron_left</mat-icon>
+                <span style="font-size: 16px;">Preguntas Frecuentes</span>
+                <mat-icon style="margin: 5px;"> forum</mat-icon>
+            </a>
+            <a routerLink="servicio-cliente" mat-list-item (click)="sidenav.toggle()">
+                <span class="spacer"></span>
+                <mat-icon mat-list-icon>chevron_left</mat-icon>
+                <span>Servicio al Cliente</span>
+                <mat-icon style="margin: 5px;"> person</mat-icon>
+            </a>
+            <a routerLink="gestion-usuario" mat-list-item (click)="sidenav.toggle()">
+                <span class="spacer"></span>
+                <mat-icon mat-list-icon>chevron_left</mat-icon>
+                <span>Gestión de Usuario</span>
+                <mat-icon style="margin: 5px;"> settings</mat-icon>
+            </a>
+            <a routerLink="perfil" mat-list-item (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>chevron_left</mat-icon>
+                <span class="spacer"></span>
+                <span>Perfil</span>
+                <mat-icon style="margin: 5px;"> account_circle</mat-icon>
+            </a>
+            <a routerLink="inventario-equipos" mat-list-item (click)="sidenav.toggle()">
+                <span class="spacer"></span>
+                <mat-icon mat-list-icon>chevron_left</mat-icon>
+                <span>Inventario de Equipos</span>
+                <mat-icon style="margin: 5px;"> store</mat-icon>
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <div class="contenedor" *ngIf="_router.url != '/login'">
+        <mat-grid-list cols="5" rowHeight="30px">
+            <mat-grid-tile [colspan]=2 [rowspan]=1>
+                <div class="mat-grid-tile-content">INDUSTRIAS DIGITAL UX</div>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]=2 [rowspan]=1>
+                <div class="mat-grid-tile-content last-session">Última sesión</div>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]=1 [rowspan]=2>
+                <div class="mat-grid-tile-content lateral-menu"><button mat-button (click)="sidenav.toggle()">
+                        <div class="ico-secondary-menu">i</div>
+                    </button></div>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]=2 [rowspan]=1>
+                <div class="mat-grid-tile-content name">Yolanda Gigante</div>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]=2 [rowspan]=1>
+                <div class="mat-grid-tile-content date">17/03/2022 - 12:55pm</div>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+
+    <router-outlet></router-outlet>
+</mat-sidenav-container>

@@ -1,0 +1,230 @@
+.contenedor {
+  top: 6vh !important;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 25%;
+  position: relative;
+
+}
+
+.contenedor * {
+  box-sizing: border-box;
+}
+
+.titulo_operac {
+  font-size: 24px;
+  color: #257B58;
+  font-weight: 400;
+  margin-top: 31px;
+
+}
+
+.card-form {
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  max-height: auto;
+  width: 100%;
+  max-width: 390px;
+  justify-content: center;
+  margin: auto
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+
+.input-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: space-between;
+
+}
+
+.input-group1 label {
+  margin-left: 2px;
+  padding-top: 1em;
+  font-size: 14px;
+  color: #5D5C5C;
+  margin-bottom: 0;
+}
+
+.select-group {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.select-group label {
+  margin-left: 2px;
+  padding-top: 1em;
+  font-size: 14px;
+  color: #5D5C5C;
+  margin-bottom: 0;
+}
+
+.select-group .seleccion {
+  display: inline-flex;
+  align-content: stretch;
+  gap: 10px;
+  border-radius: 10px;
+}
+
+.select-group .seleccion input {
+  flex-grow: 3;
+  height: 41px;
+  border: 2px solid #8C8B8B;
+  border-radius: 10px;
+  align-self: center;
+  width: 100%;
+  font-size: 15px;
+  max-width: 295px;
+  font-weight: 400;
+  color: #161615;
+  ;
+}
+
+.select-group .seleccion a {
+  margin-top: 5px;
+}
+
+.select {
+  position: relative;
+  width: 40%;
+  display: inline-block;
+}
+
+.select-group .seleccion .select select {
+  flex-grow: 2;
+  height: 41px;
+  border: 2px solid #8C8B8B;
+  border-radius: 10px;
+  align-self: center;
+  width: 100%;
+  color: #161615;
+  max-width: 100px;
+  font-size: 15px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+select:focus {
+  outline: none;
+}
+
+.select-id {
+  position: relative;
+  width: 40%;
+  display: inline-block;
+}
+
+.select-group .seleccion .select-id select {
+  flex-grow: 1;
+  height: 40px;
+  border: 2px solid #8C8B8B;
+  border-radius: 10px;
+  align-self: center;
+  width: 100%;
+  max-width: 130px;
+  font-size: 15px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  position: relative;
+
+}
+
+.select-id::after {
+  content: "";
+  display: inline-block;
+  border-top: 7px solid #257B58;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  position: absolute;
+  top: calc(50% - 4px);
+  left: 6em;
+}
+
+.input-group1 input {
+  height: 41px;
+  border: 2px solid #8C8B8B;
+  max-width: 350px;
+  width: 100%;
+  align-self: center;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.input-group button {
+  padding: 0.2em;
+  color: #FFFFFF;
+  background-color: #196842;
+  width: 90%;
+  max-width: 300px;
+  border: 0;
+  align-self: center;
+  border-radius: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+.card_sub {
+  margin-top: -15px !important;
+  color: #5D5C5C;
+  line-height: 18px;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.margin {
+  margin-top: -.5em;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.select::after {
+  content: "";
+  display: inline-block;
+  border-top: 7px solid #257B58;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  position: absolute;
+  top: calc(50% - 4px);
+  left: 3.8em;
+}
+
+input[type=number] {
+  padding: 10px 15px;
+}
+
+input[type=tel] {
+  padding: 10px 15px;
+}
+
+input[type=text] {
+  padding: 10px 15px;
+}
+
+.form-control.ng-touched.ng-invalid {
+  border: 2px solid #D70C1B;
+}
+
+button:disabled {
+  opacity: 0.3;
+}

@@ -1,0 +1,50 @@
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<mat-toolbar class="toolBarNav" *ngIf="!(_router.url === '/inicio' || _router.url ==='/login')">
+
+  <button mat-flat-button routerLink="/inicio">
+    <div class="iso-banesco">i</div>
+    <span>Inicio</span>
+  </button>
+
+  <button mat-flat-button routerLink="/dashboard">
+    <div class="ico-dashboard ico-position">i</div>
+    <span>Tus transacciones</span>
+  </button>
+
+  <button mat-flat-button [matMenuTriggerFor]="subMenuAbove">
+    <div class="ico-payment ico-position">i</div>
+    <span>Cobra y valida pagos</span>
+  </button>
+
+  <button mat-flat-button routerLink="vuelto">
+    <div class="ico-pocket-change">i</div>
+    <span>Otorga un vuelto</span>
+  </button>
+  <!--
+  <button mat-flat-button [matMenuTriggerFor]="subMenuAbove1">
+    <div class="ico-exchange ico-position">i</div>
+    <span>mesa de cambio</span>
+  </button>
+  -->
+  <!-- submenu cobro y pago-->
+  <mat-menu #subMenuAbove="matMenu" yPosition="above" xPosition="before" class="subMenu">
+    <div>
+      <button mat-menu-item routerLink="">Pagos con tarjeta</button>
+      <button mat-menu-item routerLink="/validar-zelle">Validación Zelle</button>
+      <button mat-menu-item routerLink="/recargas">Cargo en cuenta</button>
+    </div>
+
+  </mat-menu>
+  <!-- submenu mesa de cambio-->
+  <!--
+    <mat-menu #subMenuAbove1="matMenu" yPosition="above" xPosition="after" class="subMenuExchange">
+        <div>
+            <button mat-menu-item routerLink="/compra-divisas">Compra de Divisas</button>
+            <button mat-menu-item routerLink="/venta-divisas">Venta de Divisas</button>
+
+        </div>
+
+    </mat-menu>
+    -->
+
+</mat-toolbar>

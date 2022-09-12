@@ -1,0 +1,106 @@
+<div class="contenedor">
+  <h2 class="titulo_operac">Cobro con tarjeta</h2>
+  <p class="card_sub">Cobra con tarjeta nacional o TDD/TDC internacional </p>
+  <form [formGroup]="ic_form" class="card-form">
+    <div class="row">
+      <div class="column">
+        <div class="margin">
+          <div class="input-group1">
+            <label for="">Número de tarjeta</label>
+            <input id="cc-number" type="tel" class=" cc-number form-control" placeholder="Número de tarjeta"
+              formControlName="CardNumberGet" autocomplete="cc-number" ccNumber>
+            <span class="form-text text-danger" *ngIf="campoNoValido('CardNumberGet')">
+              Ingrese el número de la tarjeta
+            </span>
+          </div>
+          <div class="input-group1">
+            <label for="">Nombre del titular</label>
+            <input id="cc-number" type="text" class="form-control" placeholder="Indique nombre del titular"
+              formControlName="cardHolder" autocomplete="cc-number" maxlength="50">
+            <span class="form-text text-danger" *ngIf="campoNoValido('cardHolder')">
+              Ingrese el nombre del titular
+            </span>
+          </div>
+          <div class="select-group">
+            <label for="id-receptor">Cédula de identidad</label>
+            <div class="seleccion">
+              <div class="select">
+                <select name="type-id" id="type-id" formControlName="typeId">
+                  <option value="">&nbsp;&nbsp;Elegir</option>
+                  <option *ngFor="let id_customer of ids_customer" [value]="id_customer">&nbsp;&nbsp;{{id_customer}}
+                  </option>
+                </select>
+              </div>
+              <input type="tel" id="numbId" placeholder="Cédula de identidad" formControlName="numbId"
+                class="form-control" maxlength="15">
+            </div>
+          </div>
+          <span class="form-text text-danger" *ngIf="campoNoValido('typeId')">
+            Seleccione el tipo de cédula
+          </span>
+          <span class="form-text text-danger" *ngIf="campoNoValido('numbId')">
+            Ingrese el número de cédula
+          </span>
+          <div class="select-group">
+            <label for="CVC_code" style="margin-bottom: 0;">CVC</label>
+            <div class="seleccion">
+              <input type="tel" placeholder="Ingrese CVC de la tarjeta" class="cvc-input form-control" id="cc-CVC"
+                formControlName="cvc" ccCVC>
+              <div href="" class="ico-info">
+                i
+              </div>
+            </div>
+          </div>
+          <span class="form-text text-danger" *ngIf="campoNoValido('cvc')">
+            Ingrese numero de CVC
+          </span>
+          <div class="select-group">
+            <label for="id-receptor">Fecha de vencimiento</label>
+            <div class="seleccion">
+              <div class="select-id">
+                <select name="type-id" id="type-id" class="" formControlName="expiryMonth">
+                  <option value="" selected>&nbsp;&nbsp;&nbsp;MM
+                  </option>
+                  <option *ngFor="let month of monthlist" [value]="month.value">&nbsp;&nbsp;&nbsp;{{month.text}}
+                  </option>
+                </select>
+              </div>
+              <div class="select-id">
+                <select name="type-id" id="type-id" class="" formControlName="expiryYear">
+                  <option value="" selected>&nbsp;&nbsp;AAAA
+                  </option>
+                  <option *ngFor="let year of years" [value]="year.value">&nbsp;&nbsp;{{year.text}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <span class="form-text text-danger" *ngIf="campoNoValido('expiryMonth')">
+            Seleccione el mes de vencimiento
+          </span>
+          <span class="form-text text-danger" *ngIf="campoNoValido('expiryYear')">
+            Ingrese el año de vencimiento
+          </span>
+          <div class="input-group1">
+            <label for="">Monto a debitar</label>
+            <input type="tel" class=" form-control" placeholder="Bs." formControlName="amount" maxlength="8"
+              placeholder="Monto a debitar">
+            <span class="form-text text-danger" *ngIf="campoNoValido('amount')">
+              Ingrese monto a debitar
+            </span>
+          </div>
+          <div class="input-group1">
+            <label for="">Descripción</label>
+            <input type="text" class="card-client form-control" formControlName="description"
+              placeholder="Descripción de la operación" maxlength="30">
+            <span class="form-text text-danger" *ngIf="campoNoValido('description')">
+              Ingrese descrpción de la operación
+            </span>
+          </div>
+          <div class="input-group">
+            <button id="continuar" [disabled]="!ic_form.valid" (click)="submit()">CONTINUAR</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

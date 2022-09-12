@@ -1,0 +1,60 @@
+<div class="contenedor">
+    <div class="row">
+        <div class="columna">
+            <div class="input-group1" style="border-bottom: 3px solid #E6EAF1; max-height: 6em;">
+                <ng-template [ngIf]="filterParam.code==201 || filterParam.code==200 " [ngIfElse]="error">
+                    <div class="ico-success">i</div>
+                    <h2 class="info-title">¡{{filterParam.message  | messageIC}}!</h2>
+                </ng-template>
+                
+               <ng-template #error>
+                    <div class="ico-failed">i</div>
+                    <h2 class="info-title-error">¡Operación fallida!</h2>
+                   
+               </ng-template>
+               
+              </div>
+            
+            <div class="input-group1" style="margin-top: 24px;">
+                <label for="name_receptor">
+                    Número de tarjeta
+                </label>
+                <p class="info-receptor">{{filterParam.dataResponse.CardNumber | hashCardPipe:4}}</p>
+            </div>
+            <div class="input-group1" >
+                <label for="">Nombre del titular</label>
+                <p class="info-receptor">{{filterParam.dataResponse.CardHolder}}</p>
+            </div>
+            <div class="input-group1" [hidden]="filterParam.responsecode != '00'">
+                <label for="">Número de referencia</label>
+                <p class="info-receptor">{{filterParam.reference | nullWithDefault}}</p>
+            </div>
+            <div class="input-group1" [hidden]="filterParam.responsecode != '00'">
+                <label for="">Número de lote</label>
+                <p class="info-receptor">{{filterParam.approval | nullWithDefault}}</p>
+            </div>
+            <div class="input-group1" [hidden]="filterParam.responsecode == '00'">
+                <label for="">Código respuesta</label>
+                <p class="info-receptor">{{filterParam.responsecode | nullWithDefault}}</p>
+            </div>
+            <div class="input-group1">
+                <label for="">Fecha</label>
+                <p class="info-receptor name-bank">
+                  {{filterParam.datetime | date:'d/M/yy h:mm a'}}
+                </p>
+            </div>
+            <div class="input-group1">
+                <label for="">Monto de la operación</label>
+                <p class="info-receptor">Bs.{{filterParam.dataResponse.Amount  | number:'1.2' | nullWithDefault}}</p>
+            </div>
+            
+
+            <div class="select-group">
+                <div class="seleccion" style="justify-content:center;">
+                  <button class="button1" routerLink="/inicio">INICIO</button>
+                </div>
+        </div>
+    </div>
+
+</div>
+

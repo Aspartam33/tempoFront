@@ -1,0 +1,121 @@
+.contenedor{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    height: 80vh;
+    margin-top: 70px;
+    margin-bottom: 20%;
+}
+
+.contenedor *{
+    box-sizing: border-box;
+
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+  }
+  .column {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+  }
+
+  .input1-group {
+      width: 100%;
+   
+    display: flex;
+   flex-direction: column;
+   margin: auto;
+   justify-content: space-between;
+ 
+}
+
+.input-group {
+    width: 100%;
+ 
+  display: flex;
+ flex-direction: column;
+ margin: auto;
+ margin-bottom:10px;
+ justify-content: space-between;
+
+}
+.input-group1 label{
+ 
+    padding: .2em 0;
+    font-size: 14px;
+    color: #5D5C5C;
+    flex-grow: 3;
+    margin-left: 10px;
+}
+.input-group1  .info-title{
+    width: 100%;
+    max-width: 162px;
+    height: 42px;
+    font-size: 18px;
+    color: #257B58;
+    font-weight: 400;
+    line-height: 21px;
+    margin-top: 31px;
+    text-align: center;
+   margin: 0 auto;
+  margin-bottom: 24px;
+  margin-top: 20px;
+}
+
+.input-group1 label{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.4px;
+    color: #5D5C5C;
+    margin-bottom: 6px;
+    margin-left: 20px;
+}
+
+.input-group1 p{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.4px;
+    text-transform: capitalize;
+    color: #8C8B8B;
+    margin-bottom: 10px;
+    margin-left: 20px;
+
+}
+.input-group button{
+    padding: 0.2em;
+    color: #FFFFFF;
+    background-color: #007953;
+    width: 90%;
+    max-width: 300px;
+    border:0;
+    align-self: center;
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 21px;
+}
+
+.circle-title-content{
+    border: 3px solid #FFFFFF;
+    border-radius: 100%;
+    background-color: #FFFFFF;
+    height: 80px;
+    align-items: center;
+    position: relative;
+    transition: all 0.3s ease-in-out 0s;
+    width: 80px;
+    margin: 0 auto 0px;
+    margin-top: -60px;
+}
+
+.circle-title-content mat-icon{
+    display:flex;             
+    margin: -2px 0 2px -2px;
+    color: #007953;
+    font-size: 80px;
+    align-self:center;
+}

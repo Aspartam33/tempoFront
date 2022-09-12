@@ -1,0 +1,62 @@
+<div class="contenedor">
+  <h2 class="vuelto_title">Debito electrónico Banesco</h2>
+  <p class="vuelto_sub">Realiza cobro directo a la cuenta de un cliente</p>
+  <form [formGroup]="debitForm" class="myForm" autocomplete="off" (submit)="onSubmit()">
+    <div class="row">
+      <div class="column">
+        <div class="margin">
+          <div class="select-group">
+            <label for="id-receptor">Número de teléfono</label>
+            <div class="seleccion">
+              <div class="select">
+                <select name="type-phone" id="type-phone" class="caja" formControlName="typePhone">
+                  <option value="">&nbsp;&nbsp;&nbsp;Elegir</option>
+                  <option *ngFor="let phone of phone" [value]="phone.code">&nbsp;&nbsp;&nbsp;{{phone.phone}}
+                  </option>
+                </select>
+              </div>
+              <input type="number" placeholder="Número de teléfono" formControlName="numbPhone" class="form-control"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                maxlength="7">
+            </div>
+          </div>
+          <span class="form-text text-danger" *ngIf="campoNoValido('typePhone')">
+            Seleccione operadora de teléfono
+          </span>
+          <span class="form-text text-danger" *ngIf="campoNoValido('numbPhone')">
+            Ingrese numero de teléfono
+          </span>
+          <div class="input-group1">
+            <label>Correo electrónico (opcional)</label>
+            <input type="email" id="email" placeholder="Indique aqui correo electrónico" formControlName="email"
+              class="form-control" maxlength="30">
+            <span class="form-text text-danger" *ngIf="campoNoValido('email')">
+              El formato del correo electronico es invalido
+            </span>
+          </div>
+          <div class="input-group1">
+            <label>Monto a cobrar</label>
+            <input type="number" id="name-receptor" placeholder="Monto a cobrar" formControlName="amount"
+              class="form-control"
+              oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+              maxlength="5">
+            <span class="form-text text-danger" *ngIf="campoNoValido('amount')">
+              Ingrese monto a cobrar
+            </span>
+          </div>
+          <div class="input-group1">
+            <label>Descripcion</label>
+            <input type="text" id="name-receptor" placeholder="Descripcion de la operación" formControlName="concept"
+              class="form-control" maxlength="15">
+            <span class="form-text text-danger" *ngIf="campoNoValido('concept')">
+              Ingrese descrpción de la operación
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="input-group">
+        <button type="submit" id="continuar" [disabled]="debitForm.invalid">CONTINUAR</button>
+      </div>
+    </div>
+  </form>
+</div>

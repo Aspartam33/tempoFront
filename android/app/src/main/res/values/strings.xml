@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Banesco Pagos</string>
+    <string name="title_activity_main">Banesco Pagos</string>
+    <string name="package_name">com.suiteBanesco.app</string>
+    <string name="custom_url_scheme">com.suiteBanesco.app</string>
+</resources>

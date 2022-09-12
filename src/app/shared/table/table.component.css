@@ -1,0 +1,33 @@
+.table-transactions{
+  width: 90%;
+  left: 5%;
+  margin-bottom: 20%;
+  position: relative;
+  background-color: white;
+}
+
+.icon-transactions{
+  position: relative; top: 15px;
+}
+
+.th-icon-transactions{
+  width: 5%;
+}
+
+.th-description-transactions{
+  width: 80%;
+}
+
+.th-amount-transactions{
+  width: 15%; min-width: 75px;
+}
+
+.ul-transactions{
+  font-size: 10px;
+  list-style: none;
+  position: relative;
+  right: 35px;
+  margin-bottom: 0;
+}
+
+

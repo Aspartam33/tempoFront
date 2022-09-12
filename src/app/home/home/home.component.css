@@ -1,0 +1,121 @@
+.contenedor {
+  margin-top: 5.5vh !important;
+  height: 92%;
+  margin: 0 auto;
+  position: relative;
+  background-color: #257B58;
+}
+
+.contenedor * {
+  box-sizing: border-box;
+}
+
+.titulo {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  top: -2em;
+}
+
+.titulo p {
+  color: #E6EAF1;
+  font-size: 25px;
+  line-height: 23px;
+  font-weight: 700;
+  margin-top: 3em;
+}
+
+.product-content {
+  position: absolute;
+  background-color: #E6EAF1;
+  border-radius: 3em 3em 0em 0em;
+  bottom: 0;
+  width: 100%;
+}
+
+.product-title {
+  position: relative;
+  width: 100%;
+  top: 1em;
+}
+
+.product-title p {
+  width: 100%;
+  color: #257B58;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5em;
+  margin-top: 0.5em;
+  font-size: 30px;
+}
+
+.mat-grid-tile-content {
+  position: relative;
+  width: 85%;
+  height: 75%;
+  display: block;
+}
+
+.mat-grid-tile-content img {
+  position: relative;
+  width: 80%;
+  height: 100%;
+  left: 1.5em;
+}
+
+.mat-grid-tile-content p {
+  position: relative;
+  text-align: center;
+  font-size: 12px;
+  color: #E6EAF1;
+}
+
+.logo-banesco {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  top: -2em;
+}
+
+.logo-banesco img {
+  position: relative;
+  width: 60%;
+}
+
+.button {
+  position: relative;
+  margin-bottom: 1em;
+  margin-left: 1.5em;
+}
+
+.button img {
+  width: 8em;
+}
+
+.button span {
+  position: absolute;
+  top: 6em;
+  left: 0em;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+}
+
+.last-button {
+  position: relative;
+  margin-left: 1.5em;
+}
+
+.last-button img {
+  width: 8em;
+}
+
+.last-button span {
+  position: absolute;
+  top: 6em;
+  left: 0em;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+}

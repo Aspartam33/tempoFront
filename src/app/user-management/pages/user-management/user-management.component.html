@@ -1,0 +1,84 @@
+<div class="contenedor">
+    <h2 class="titulo">Gestión de usuario</h2>
+    <p class="sub-titulo">Gestiona tus usuarios y asigna sus perfiles</p>
+
+
+<div class="contenido" >
+    <div class="acordion">
+        <div class="acordion-item" id="users" >
+          <a (click)="clickEvent($event)" >Gestiona tus perfiles</a>
+          <i ></i>
+          <mat-icon class="icon-arrow up-ico" [ngClass]="{'icon-arrow': toogle, 'up-ico':!toogle} ">arrow_drop_down</mat-icon>
+         
+        </div>
+        <div class="table" [ngClass]="{'table':toogle}">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre de perfil</th>
+                        <th>Descripción</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+               <tbody>
+                <tr *ngFor="let profile of profiles">
+                    <td>{{profile.name}}</td>
+                    <td>{{profile.description}}</td>
+                    <td> <a href="#"><mat-icon>edit</mat-icon></a>
+                        &nbsp;
+                        <a href="edo"><mat-icon>delete_outline</mat-icon></a></td>
+                     
+                  
+                   
+                    
+                </tr>
+              
+               </tbody>
+              
+            </table>
+        </div>
+        <div class="add">
+            <button routerLink="/create-profile">AÑADIR</button>
+        </div>
+    </div>
+</div>
+
+<div class="contenido">
+    <div class="acordion">
+        <div class="acordion-item" id="users">
+          <a (click)="clickEvent2($event)" >Gestiona tus usuarios</a>
+          <mat-icon class="icon-arrow" [ngClass]="{'icon-arrow': toogle2, 'up-ico':!toogle2} ">arrow_drop_down</mat-icon>
+        
+        </div>
+        <div class="table"  [ngClass]="{'table':toogle2}">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre de usuario</th>
+                        <th>Perfil</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+               <tbody>
+                <tr *ngFor="let user of users">
+                    <td>{{user.username}}</td>
+                    <td>{{user.profilename}}</td>
+                    <td> <a [routerLink]="['/edit-user',user.id]"><mat-icon>edit</mat-icon></a>
+                        &nbsp;
+                        <a (click)="deleteUser(user)"><mat-icon>delete_outline</mat-icon></a></td>
+                     
+                  
+                   
+                    
+                </tr>
+               </tbody>
+              
+            </table>
+        </div>
+        <div class="add">
+            <button routerLink="/create-users">AÑADIR</button>
+        </div>
+    </div>
+</div>
+
+

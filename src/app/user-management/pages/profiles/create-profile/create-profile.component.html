@@ -1,0 +1,52 @@
+<div class="contenedor">
+    <h2 class="titulo">Gestión de usuario</h2>
+    <p class="sub-titulo">Gestiona tus usuarios y asigna sus perfiles</p>
+
+    <form [formGroup]="profileForm" class="user-form">
+            <div class="row">
+                <div class="columna">
+                    <div class="margin">
+                        <div class="input-group1">
+                      <label for="">Nombre del perfil</label>
+                      <input type="text" class="form-control info-profile" placeholder="Nombre" formControlName="name" maxlength="8">
+                      <span class="form-text text-danger" *ngIf="campoNoValido('name')">
+                        Ingrese el nombre
+                      </span>
+                        </div>
+                     
+                        <div class="input-group1" style="margin-bottom: 20px;">
+                            <label for="">Descripción del perfil</label>
+                            <input type="text" class="form-control info-profile" placeholder="Describe la función de este perfil" formControlName="description" maxlength="40">
+                            <span class="form-text text-danger" *ngIf="campoNoValido('description')">
+                                Ingrese la descripcion del perfil
+                              </span>
+                        </div>
+          
+                        <div class="list-group1" >
+                            <label for="">Permisos del perfil</label>
+                            <ul>
+                                <li *ngFor="let role of roles; let last = last" >
+                                    <div class="permission-list"  [ngClass]="{'last-child': last}">
+                                      
+                                        <label for="">{{role.description}}</label><input type="checkbox"    value={{role.id}} >
+                                    </div>
+                                  
+                                </li>
+                               
+                            </ul>
+                               
+                            
+                            
+                            
+                        </div>
+                       
+                    
+                        <div class="input-group">
+                            <button id="continuar">AÑADIR</button>
+                          </div>
+                    </div>
+                </div>
+            </div>
+    </form>
+
+</div>

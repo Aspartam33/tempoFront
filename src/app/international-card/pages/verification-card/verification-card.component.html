@@ -1,0 +1,47 @@
+<div class="contenedor">
+    <div class="row">
+        <div class="columna">
+            <div class="input-group1" style="border-bottom: 3px solid #E6EAF1;">
+                <h2 class="info-title">Verifique los datos para continuar</h2>
+            </div>
+            <div class="input-group1" style="margin-top: 24px;">
+                <label for="name_receptor">
+                    Número de tarjeta
+                </label>
+                <p class="info-receptor">{{filterParam.CardNumberGet | hashCardPipe:4 }}
+                </p>
+            </div>
+            <div class="input-group1">
+                <label for="">Nombre del titular</label>
+                <p class="info-receptor">{{filterParam.cardHolder}}</p>
+            </div>
+            <div class="input-group1">
+                <label for="">Cédula de identidad </label>
+                <p class="info-receptor name-bank">
+                    {{filterParam.cardHolderID}}
+                </p>
+            </div>
+            <div class="input-group1">
+                <label for="">Fecha de vencimiento</label>
+                <p class="info-receptor">{{filterParam.expirationDate}}</p>
+            </div>
+            <div class="input-group1">
+                <label for="">Monto a debitar</label>
+                <p class="info-receptor">Bs.{{filterParam.amount | number:'1.2'}}</p>
+            </div>
+            <div class="input-group1">
+                <label for="">Concepto de la operación</label>
+                <p class="info-receptor">{{filterParam.description}}</p>
+            </div>
+            
+            
+            
+            <div class="select-group">
+                <div class="seleccion" style="justify-content:center;">
+                    <button class="button2" routerLink="/tarjeta-internacional">REGRESAR</button>
+                    <button class="button1" (click)=" confirmOperation()">CONTINUAR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

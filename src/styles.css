@@ -1,0 +1,140 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Helvetica, sans-serif;
+  background-color: #E6EAF1;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.title-table {
+  position: relative;
+  left: 5%;
+  color: #186641;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 5% !important;
+  margin-bottom: 0% !important;
+}
+
+.ico-position {
+  position: relative;
+  left: 25%;
+}
+
+.iso-banesco {
+  background-image: url(assets/img/isotipo-banesco.png);
+  background-repeat: no-repeat;
+  background-size: 24px auto;
+  color: transparent;
+  top: 5px;
+}
+
+.ico-dashboard {
+  background-image: url(assets/img/your-transactions-ico.png);
+  background-repeat: no-repeat;
+  background-size: 24px 23px;
+  color: transparent;
+  top: 5px;
+  position: relative;
+  left: 20px;
+}
+
+.ico-payment {
+  background-image: url(assets/img/payment.png);
+  background-repeat: no-repeat;
+  background-size: 24px 23px;
+  color: transparent;
+  top: 5px;
+}
+
+.ico-pocket-change {
+  background-image: url(assets/img/pocket-change.png);
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  color: transparent;
+  position: relative;
+  top: 5px;
+  left: 1.5em;
+}
+
+.ico-card-operations {
+  background-image: url(assets/img/card-operations.png);
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  color: transparent;
+  top: 5px;
+}
+
+.ico-account-charge {
+  background-image: url(assets/img/account-charge.png);
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  color: transparent;
+  top: 5px;
+}
+
+.ico-secondary-menu {
+  background-image: url(assets/img/menu.png);
+  background-repeat: no-repeat;
+  background-size: 15px 40px;
+  color: transparent;
+  top: -0.2em;
+  position: relative;
+  height: 3em;
+  left: 0.5em;
+}
+
+.ico-calendar {
+  background-image: url(assets/img/calendar.png);
+  background-repeat: no-repeat;
+  background-size: 3.2em 3em;
+  color: transparent;
+  position: relative;
+  right: 0.3em;
+  height: 3em;
+}
+
+.ico-success {
+  background-image: url(assets/img/icons/success.png);
+  background-repeat: no-repeat;
+  background-size: 7em;
+  color: transparent;
+  position: relative;
+  left: 35%;
+  top: -4em;
+  height: 7em;
+}
+
+.ico-failed {
+  background-image: url(assets/img/icons/failed.png);
+  background-repeat: no-repeat;
+  background-size: 7em;
+  color: transparent;
+  position: relative;
+  left: 35%;
+  top: -4.3em;
+  height: 7em;
+}
+.ico-info{
+  background-image: url(assets/img/icons/informacionico.png);
+  background-repeat: no-repeat;
+  background-size:30px;
+  color: transparent;
+  position: relative;
+  margin: 6px 0 0 0;
+  height: 30px;
+  width: 50px;
+}
+.mat-drawer-content {
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}

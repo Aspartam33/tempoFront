@@ -1,0 +1,29 @@
+<div class="contenedor">
+  <div class="row">
+    <div class="columna">
+      <div class="input-group1" style="border-bottom: 3px solid #E6EAF1;">
+        <h2 class="info-title">Verifique los datos
+          para continuar</h2>
+      </div>
+      <div class="input-group1" style="margin-top: 24px;">
+        <label for="">Número de teléfono del emisor</label>
+        <p class="info-receptor name-bank">{{filterParam.typePhone | codePhone
+          }}-{{filterParam.numbPhone}}</p>
+      </div>
+      <div class="input-group1">
+        <label for="">Monto a debitar</label>
+        <p class="info-receptor">Bs. {{filterParam.amount | number:'1.2'}}</p>
+      </div>
+      <div class="input-group1">
+        <label for="">Descripción</label>
+        <p class="info-receptor">{{filterParam.concept}}</p>
+      </div>
+      <div class="select-button">
+        <div class="section">
+          <button class="button2" routerLink="/debito-electronico">REGRESAR</button>
+          <button class="button1">SOLICITAR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

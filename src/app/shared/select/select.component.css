@@ -1,0 +1,120 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+a{
+    text-decoration: none;
+}
+
+/*vista móvil*/
+.contenedor{
+    
+    width:90%;
+    max-width: 900px;
+    margin: auto;
+  
+}
+:host mat-form-field{
+    width:354px;
+    border-radius: 16px;
+    background-color: #ffffff;
+    }
+
+    ::ng-deep .mat-option-text {
+        display: flex!important;
+          justify-content: space-between;
+        
+      }
+     
+    
+.select-box{
+    margin-top: 10px;
+    width: 354px;
+    margin: auto;
+    position: relative;
+}
+
+.select{
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0px 0px 0px rgba(0, 0,0, 0.16);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: .2s ease all;
+    margin-bottom: 30px;
+    width: 354px;
+    height: 64px;
+    position: relative;
+    z-index: 200;
+    border:  2px solid transparent;
+
+}
+.select.active,
+.select:hover{
+    box-shadow: 0px 5px 10px rgba(0, 0,0, 0.16);
+}
+
+.contenido-opcion{
+    
+    width: 354px;
+    height: 64px;
+    align-items: center;
+    display: flex;
+    transition: .2s ease all;
+    justify-content: space-between;
+    /********/
+}
+.titulo{
+   
+  
+  display: flex;
+  top: 128px;
+    left: 62px;
+   margin-left: 25px;
+  
+}
+.titulo p{
+    margin-top: 16px;
+    height: 100%;
+    width:98px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #257B58;
+    line-height: 16px;
+    margin-bottom: 16px;
+}
+.sum-operation{
+    display: flex;
+   top: 124px;
+  margin-right: 17px;
+   margin-left: 54px;
+   left:214px;
+}
+.sum-operation p{
+    margin-top: 12px;
+    margin-bottom: 12px;
+    height: 41px;
+   width: 124px;
+    color: #257B58;
+font-size: 32px;
+font-weight: 400;
+}
+
+
+@media screen and (min-width: 375px) and (max-width:1024px){
+
+    .select-box{
+    width: 354px;
+    margin-right:auto;
+ 
+    position: relative;
+    
+
+   
+}
+}

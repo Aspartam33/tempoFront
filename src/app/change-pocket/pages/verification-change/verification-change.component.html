@@ -1,0 +1,41 @@
+<div class="contenedor">
+  <div class="row">
+    <div class="columna">
+      <div class="input-group1" style="border-bottom: 3px solid #E6EAF1;">
+        <h2 class="info-title">Verifique los datos
+          para continuar</h2>
+      </div>
+      <div class="input-group1" style="margin-top: 24px;">
+        <label>Número de factura</label>
+        <p class="info-receptor">{{filterParam.paymentId}}</p>
+      </div>
+      <div class="input-group1">
+        <label for="">Cédula de identidad</label>
+        <p class="info-receptor">{{filterParam.accountTo.customerId}}</p>
+      </div>
+      <div class="input-group1">
+        <label for="">Número de teléfono destino</label>
+        <p class="info-receptor name-bank">{{filterParam.accountTo.typePhone | codePhone
+          }}-{{filterParam.accountTo.numbPhone}}</p>
+      </div>
+      <div class="input-group1">
+        <label for="">Banco a transferir</label>
+        <p class="info-receptor name-bank">{{filterParam.accountTo.bankId | codeBank }}</p>
+      </div>
+      <div class="input-group1">
+        <label for="">Monto a transferir</label>
+        <p class="info-receptor">Bs. {{filterParam.amount | number:'1.2'}}</p>
+      </div>
+      <div class="input-group1">
+        <label for="">Descripción</label>
+        <p class="info-receptor">{{filterParam.concept}}</p>
+      </div>
+      <div class="select-button">
+        <div class="section">
+          <button class="button2" routerLink="/vuelto">REGRESAR</button>
+          <button class="button1" (click)="onSubmit()">CONTINUAR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

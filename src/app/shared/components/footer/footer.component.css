@@ -1,0 +1,151 @@
+
+/*estructura  menu footer*/
+.toolBarNav{
+    position: fixed;
+    bottom: 0px;
+    z-index: 1000;
+    display: flex;
+    padding: 0.5px;
+    box-shadow: 2px 2px 4px 5px #bdbdbf;
+    background-color: #ffffff;
+
+   height: 100px;
+   
+   will-change:transform;
+	transform: translateZ(0);
+
+
+ }
+ 
+/*botones menu footer*/
+ .toolBarNav button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #ffffff;
+    border: none;
+    outline: none;
+    margin-top: 2px;
+    flex-grow:1;
+    
+ 
+}
+
+/*menu footer texto*/
+.toolBarNav span{
+    font-family:  Helvetica, sans-serif;
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #111111;
+    white-space: pre-line;
+    line-height: 15px;
+  
+}
+
+/*estructura submenu*/
+::ng-deep .cdk-overlay-container .subMenu {
+    margin-bottom: 35px;
+    
+    border-radius: 15px;
+    box-shadow: #00000029;
+    margin-left: 50px;
+    width: 210px;
+    height: 220px;
+
+    
+  }
+/*botones sub menu*/
+.mat-menu-item{
+    font-family:  Helvetica, sans-serif;
+    color:#1A6940;
+    font-size: 13px;
+    text-transform: uppercase;
+    height: 50px;
+    width: 210px;
+    text-align: left;
+    
+     
+}
+
+/*Diseño telefono */
+@media  screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  { 
+    
+/*estructura  menu footer*/
+.toolBarNav{
+    position: fixed;
+    bottom: 0px;
+    z-index: 1000;
+    display: flex;
+    padding: 0.5px;
+    box-shadow: 2px 2px 4px 5px #bdbdbf;
+    background-color: #ffffff;
+
+   height: 100px;
+   
+   will-change:transform;
+	transform: translateZ(0);
+
+
+ }
+ 
+/*botones menu footer*/
+ .toolBarNav button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #ffffff;
+    border: none;
+    outline: none;
+    margin-top: 2px;
+    flex-grow:1;
+    
+ 
+}
+
+/*menu footer texto*/
+.toolBarNav span{
+    font-family:  Helvetica, sans-serif;
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #111111;
+    white-space: pre-line;
+    line-height: 15px;
+  
+}
+
+/*estructura submenu*/
+::ng-deep .cdk-overlay-container .subMenu {
+    margin-bottom: 25px;
+    
+    border-radius: 15px;
+    box-shadow: #00000029;
+    margin-left: 160px;
+    width: 180px;
+    height: 180px;
+
+    
+  }
+/*botones sub menu*/
+.mat-menu-item{
+    font-family:  Helvetica, sans-serif;
+    color:#1A6940;
+    font-size: 11px;
+    text-transform: uppercase;
+    height: 40px;
+    width: 180px;
+    text-align: left;
+    
+     
+}
+
+}
+

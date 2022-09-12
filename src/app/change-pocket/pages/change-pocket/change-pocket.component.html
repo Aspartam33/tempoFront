@@ -1,0 +1,97 @@
+<div class="contenedor">
+  <h2 class="vuelto_title">Otorgar un vuelto</h2>
+  <p class="vuelto_sub">Otorgar un vuelto a un cliente</p>
+  <form [formGroup]="p2pForm" class="myForm" autocomplete="off" (submit)="onSubmit()">
+    <div class="row">
+      <div class="column">
+        <div class="margin">
+          <div class="input-group1">
+            <label>Número de factura</label>
+            <input placeholder="Número de factura de la operación" formControlName="paymentId" class="form-control"
+              type="text" maxlength="22">
+            <span class="form-text text-danger" *ngIf="campoNoValido('paymentId')">
+              Ingrese el número de su factura
+            </span>
+          </div>
+          <div formGroupName="accountTo">
+            <div class="select-group">
+              <label for="id-receptor">Cédula de identidad</label>
+              <div class="seleccion">
+                <div class="select">
+                  <select name="type-id" id="type-id" formControlName="typeId">
+                    <option value="">&nbsp;&nbsp;&nbsp;Elegir</option>
+                    <option *ngFor="let id_customer of ids_customer" [value]="id_customer">
+                      &nbsp;&nbsp;&nbsp;{{id_customer}}</option>
+                  </select>
+                </div>
+                <input type="number" placeholder="Cédula de identidad" formControlName="numbId" class="form-control"
+                  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                  maxlength="9">
+              </div>
+            </div>
+            <span class="form-text text-danger" *ngIf="campoNoValido('accountTo.typeId')">
+              Seleccione el tipo de cédula
+            </span>
+            <span class="form-text text-danger" *ngIf="campoNoValido('accountTo.numbId')">
+              Ingrese número de cédula
+            </span>
+            <div class="select-group">
+              <label for="id-receptor">Número de teléfono</label>
+              <div class="seleccion">
+                <div class="select">
+                  <select name="type-phone" id="type-phone" class="caja" formControlName="typePhone">
+                    <option value="">&nbsp;&nbsp;&nbsp;Elegir</option>
+                    <option *ngFor="let phone of phone" [value]="phone.code">&nbsp;&nbsp;&nbsp;{{phone.phone}}
+                    </option>
+                  </select>
+                </div>
+                <input type="number" placeholder="Número de teléfono" formControlName="numbPhone" class="form-control"
+                  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                  maxlength="7">
+              </div>
+            </div>
+            <span class="form-text text-danger" *ngIf="campoNoValido('accountTo.typePhone')">
+              Seleccione operadora de teléfono
+            </span>
+            <span class="form-text text-danger" *ngIf="campoNoValido('accountTo.numbPhone')">
+              Ingrese numero de teléfono
+            </span>
+            <div class="input-group1">
+              <label for="bank-trans">Banco a transferir</label>
+              <div class="select-bank">
+                <select name="banks" id="banks-option" class="banks-opt" formControlName="bankId" class="form-control">
+                  <option value="" selected="selected">&nbsp;&nbsp;&nbsp;Seleccione el banco</option>
+                  <option *ngFor="let banks of banks" [value]="banks.code">&nbsp;&nbsp;&nbsp;{{banks.bank}}</option>
+                </select>
+              </div>
+            </div>
+            <span class="form-text text-danger" *ngIf="campoNoValido('accountTo.bankId')">
+              Seleccione banco a transferir
+            </span>
+          </div>
+          <div class="input-group1">
+            <label>Monto a transferir</label>
+            <input type="number" id="name-receptor" placeholder="Monto a transferir" formControlName="amount"
+              class="form-control"
+              oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+              maxlength="5">
+            <span class="form-text text-danger" *ngIf="campoNoValido('amount')">
+              Ingrese monto a transferir
+            </span>
+          </div>
+          <div class="input-group1">
+            <label>Descripcion</label>
+            <input type="text" id="name-receptor" placeholder="Descripcion de la operación" formControlName="concept"
+              class="form-control" maxlength="15">
+            <span class="form-text text-danger" *ngIf="campoNoValido('concept')">
+              Ingrese descrpción de la operación
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="input-group">
+        <button type="submit" id="continuar" [disabled]="p2pForm.invalid" >CONTINUAR</button>
+      </div>
+    </div>
+  </form>
+</div>

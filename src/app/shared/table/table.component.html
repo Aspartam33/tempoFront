@@ -1,0 +1,17 @@
+<table class="table table-hover table-transactions">
+  <tbody>
+    <tr *ngFor="let p2p of p2p">
+      <th>
+        <mat-icon class="icon-transactions">remove_circle_outline</mat-icon>
+      </th>
+      <th class="th-description-transactions">
+        <ul class="ul-transactions">
+          <li>{{p2p.srvType}}</li>
+          <li><b>{{p2p.referenceNumber}}</b></li>
+          <li>{{p2p.trnDate}} - {{p2p.trnTime}}</li>
+        </ul>
+      </th>
+      <th class="th-amount-transactions">Bs. {{p2p.amount}}</th>
+    </tr>
+  </tbody>
+</table>

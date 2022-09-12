@@ -1,0 +1,59 @@
+<div class="contenedor">
+  <mat-grid-list cols="4" rowHeight="30px">
+    <mat-grid-tile [colspan]=4 [rowspan]=1>
+      <div class="mat-grid-tile-content title">Tus transacciones</div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]=4 [rowspan]=1>
+      <div class="mat-grid-tile-content transaction-type">Tipo de transacción</div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]=2 [rowspan]=1>
+      <div class="mat-grid-tile-content transaction-summary">Resumen de transacciones </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]=2 [rowspan]=1>
+      <div class="mat-grid-tile-content total-amount">Monto total:Bs. 6000</div>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <div class="lineChart">
+    <canvas baseChart width="400" height="400" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
+      [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType" [plugins]="lineChartPlugins">
+    </canvas>
+  </div>
+
+  <mat-grid-list cols="4" rowHeight="30px">
+    <mat-grid-tile [colspan]=4 [rowspan]=1>
+      <div class="mat-grid-tile-content transaction-type">Búsqueda personalizada</div>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-card>
+    <mat-card-content>
+      <div class="select-group">
+        <div class="seleccion">
+          <!--DESDE-->
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+          </div>
+          <input type="text" name="dateInit" placeholder="Datepicker" class="form-control" bsDatepicker
+            [bsConfig]="{ adaptivePosition: true, showTodayButton: true, isAnimated: true, todayPosition: 'center' }" [minDate]="minCovDate"
+            [maxDate]="dateEnd ? dateEnd : maxCovDate" [(ngModel)]="dateInit" (bsValueChange)="loadData($event)">
+          <!--HASTA-->
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+          </div>
+          <input type="text" name="dateEnd" placeholder="Datepicker" class="form-control" bsDatepicker
+            [bsConfig]="{ adaptivePosition: true, showTodayButton: true, isAnimated: true, todayPosition: 'center' }" [maxDate]="maxCovDate" 
+            [minDate]="dateInit ? dateInit : minCovDate" [(ngModel)]="dateEnd" (bsValueChange)="loadData($event)">
+        </div>
+        <select class="form-control" name="country" [(ngModel)]="country" (change)="loadData($event)">
+          <option [ngValue]="null" selected>Eligue un Pais</option>
+          <option *ngFor="let country of countries" [ngValue]="country">{{country}}</option>
+        </select>
+        <button type="button" class="btn btn-success">EXPORTAR</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <app-table [p2p]="p2p"></app-table>
+</div>

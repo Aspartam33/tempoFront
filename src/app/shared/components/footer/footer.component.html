@@ -1,0 +1,44 @@
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<mat-toolbar class="toolBarNav">
+  <button mat-flat-button routerLink="/dashboard"
+   routerLinkActive="active">
+    <mat-icon>home</mat-icon>
+    <span>Inicio</span>
+  </button>
+  <button mat-flat-button routerLink="/dashboard"
+  routerLinkActive="active">
+    <mat-icon>dashboard</mat-icon>
+    <span>Dashboard</span>
+  </button>
+  <button mat-flat-button [matMenuTriggerFor]="subMenuAbove">
+    <mat-icon> monetization_on</mat-icon>
+    <span>cobro y pago</span>
+
+
+  </button>
+
+  <button mat-flat-button routerLink="/mesa-de-cambio"
+  routerLinkActive="active">
+    <mat-icon> monetization_on</mat-icon>
+    <span>mesa de cambio</span>
+
+
+  </button>
+  <button mat-flat-button
+  routerLinkActive="active">
+    <mat-icon> monetization_on</mat-icon>
+    <span>Vuelto</span>
+  </button>
+
+  <!-- submenu cobro y pago-->
+  <mat-menu #subMenuAbove="matMenu" yPosition="above" class="subMenu">
+    <div>
+      <button mat-menu-item>P2C</button>
+      <button mat-menu-item routerLink="/transferencia-inmediata">Transferencia</button>
+      <button mat-menu-item>Cobro C2p</button>
+      <button mat-menu-item routerLink="/validar-c2p">Validación zelle</button>
+    </div>
+
+  </mat-menu>
+
+</mat-toolbar>

@@ -1,0 +1,79 @@
+<div class="contenedor">
+    <h2 class="titulo">Gestión de usuario</h2>
+    <p class="sub-titulo">Gestiona tus usuarios y asigna sus perfiles</p>
+
+ 
+    <form  class="user-form" [formGroup]="usersForm">
+        <div class="row">
+            <div class="columna">
+                <div class="margin">
+                    <div class="input-group1">
+                  <label for="" style="margin-bottom: 0;">Nombre del usuario</label>
+                  <input type="text" class="form-control" placeholder="Nombre" formControlName="name">
+                  <span class="form-text text-danger" *ngIf="campoNoValido('name')">
+                    Ingrese el nombre del empleado
+                  </span>
+                    </div>
+                    <div class="input-group1">
+                        <label for="" style="margin-bottom: 0;">Apellido del usuario</label>
+                        <input type="text" class="form-control" placeholder="Apellido" formControlName="surname">
+                        <span class="form-text text-danger" *ngIf="campoNoValido('surname')">
+                            Ingrese el apellido del empleado
+                          </span>
+                    </div>
+                   
+                    <div class="select-group">
+                        <label for="id-receptor">Cédula de identidad</label>
+                        <div class="seleccion">
+                          <div class="select">
+                            <select name="type-id" id="type-id" formControlName="typeId">
+                            <option value="">&nbsp;&nbsp;Elegir</option>
+                            <option *ngFor="let id_customer of ids_customer" [value]="id_customer">&nbsp;&nbsp;{{id_customer}}</option>
+                          </select>
+                          </div>
+                          <input type="text" id="numbId" placeholder="Cédula de identidad" class="form-control" maxlength="15" formControlName="numbId">
+                        </div>
+                      </div>
+                      <span class="form-text text-danger" *ngIf="campoNoValido('typeId')">
+                        Seleccione el tipo de cédula
+                      </span>
+                      <span class="form-text text-danger" *ngIf="campoNoValido('numbId')">
+                        Ingrese el número de cédula
+                      </span>
+                    <div class="input-group1">
+                        <label for="" style="margin-bottom: 0;">Correo electrónico</label>
+                        <input type="text" class="form-control" placeholder="Correo electrónico" formControlName="email">
+                        <span class="form-text text-danger" *ngIf="campoNoValido('email')">
+                            Ingrese el correo electrónico
+                        </span>
+                    </div>
+                    <div class="input-group1">
+                        <label for="" style="margin-bottom: 0;">Usuario</label>
+                        <input type="text" class="form-control" placeholder="Usuario" formControlName="username">
+                        <span class="form-text text-danger" *ngIf="campoNoValido('username')">
+                            Ingrese el nombre de usuario, solo permite letras, numeros y guión bajo
+                        </span>
+                    </div>
+                    <div class="input-group1" formGroupName="profileid">
+                        <label for="">Tipo de perfil</label>
+                        <div class="select-profile">
+                            <select name="" id="" formControlName="id">
+                                <option value="" selected>&nbsp;&nbsp;&nbsp;Perfil</option>
+                                <option *ngFor="let profile of profiles" [value]="profile.id">&nbsp;&nbsp;{{profile.name}}</option>
+                            </select>
+                        </div>
+                        <span class="form-text text-danger" *ngIf="campoNoValido('profileid.id')">
+                            Ingrese el tipo de perfil
+                        </span>
+                    </div>
+                  
+                    <div class="input-group">
+                        <button id="continuar"  [disabled]="!usersForm.valid" (click)="submit()"  >CONTINUAR</button>
+                      </div>
+                </div>
+            </div>
+        </div>
+</form>
+
+</div>
+
