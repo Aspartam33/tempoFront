@@ -25,10 +25,10 @@
                         <div class="list-group1" >
                             <label for="">Permisos del perfil</label>
                             <ul>
-                                <li *ngFor="let role of roles; let last = last" >
-                                    <div class="permission-list"  [ngClass]="{'last-child': last}">
+                                <li *ngFor="let role of roles; let last = last; let i=index" >
+                                    <div class="permission-list"  [ngClass]="{'last-child': last}" >
                                       
-                                        <label for="">{{role.description}}</label><input type="checkbox"    value={{role.id}} >
+                                        <label for="">{{role.description}}</label><input type="checkbox"   value={{role.id}} (change)="onChange($event)" formArrayName="role1" >
                                     </div>
                                   
                                 </li>
@@ -42,7 +42,7 @@
                        
                     
                         <div class="input-group">
-                            <button id="continuar">AÑADIR</button>
+                            <button id="continuar" (click)="submit()">AÑADIR</button>
                           </div>
                     </div>
                 </div>

@@ -9,59 +9,67 @@ import { Role } from '../../../interfaces/Role';
 })
 export class CreateProfileComponent implements OnInit {
 
-  fields:any;
-  roles:Role[];
-  profileForm :FormGroup;
-  constructor(private profileService: ProfileServiceService,private _fb: 
-    FormBuilder) { }
+  fields: any;
+  profileForm: FormGroup;
+  roles: any={};
+  constructor(private profileService: ProfileServiceService, private _fb:
+    FormBuilder) {}
 
   ngOnInit(): void {
-    this.fields={
-      role:[{
-        id:1
-      }]
-    };
+
     this.getAllRoles()
     this.formProfile();
     //this.patch();
   }
-   
-   formProfile(){
-     this.profileForm=this._fb.group({
-      name:['',[Validators.required, Validators.pattern('^[a-zA-Z \-\']+')]],
-      description:['',[Validators.required, Validators.pattern('^[a-zA-Z \-\']+')]],
-     // role:this._fb.array([])
-     })
+
+  formProfile() {
+    this.profileForm = this._fb.group({
+      name: ['', [Validators.required, Validators.pattern('^[a-zA-Z \-\']+')]],
+      description: ['', [Validators.required, Validators.pattern('^[a-zA-Z \-\']+')]],
+      role1:  new FormArray([]),
+      role:this._fb.array([])
+
+      
+    })
+  }
+
+   onChange(event){
+       const rol = (this.profileForm.controls['role1'] as FormArray)
+       const control = <FormArray>this.profileForm.get('role');
+       if(event.target.checked){
+        rol.push(new FormControl(event.target.value))
+
+        control.push(this.patchValues(event.target.value))
+       }else{
+        const index = rol.controls
+        .findIndex(x=> x.value === event.target.value);
+        rol.removeAt(index)
+
+       }
    }
 
-  //agrupar id con valor
-  /*patch(){
-    const control = <FormArray>this.profileForm.get('role');
-     this.fields.role.forEach(element => {
-       control.push(this.patchValues(element.id))
-     });
-  }
-
-  patchValues(id){
+  patchValues(values){
     return this._fb.group({
-      id:[id]
+      id:[values]
     })
-    
-  }*/
-
-
-   //llamadas al api
-  getAllRoles(){
-    this.profileService.getRole().subscribe(
-      (response)=>{
-        console.log(response)
-        this.roles=response;
-      }
-     
-    )
-  }  
-  campoNoValido(campo: string) {
-    return  this.profileForm .get(campo)?.errors &&  this.profileForm.get(campo)?.touched && this.profileForm.get(campo)?.invalid;
   }
-  submit(){console.log(this.profileForm.value)}
+
+ 
+  getAllRoles() {
+    this.profileService.getRole().subscribe(
+      (response) => {
+        console.log(response)
+        this.roles = response;
+      }
+
+    )
+  }
+  campoNoValido(campo: string) {
+    return this.profileForm.get(campo)?.errors && this.profileForm.get(campo)?.touched && this.profileForm.get(campo)?.invalid;
+  }
+  submit() {
+    console.log(this.profileForm.value)
+  }
 }
+                    
+             
